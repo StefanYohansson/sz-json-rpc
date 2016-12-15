@@ -18045,6 +18045,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (_this.options.onWSClose) _this.options.onWSClose(_this.curSocket);
 
 	        _this.keepAliveTimeout = setTimeout(function () {
+	          console.info('Retrying Connection...');
 	          _this.getSocket();
 	        }, _this.keepAliveDelta);
 
@@ -18066,7 +18067,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'socketReady',
 	    value: function socketReady() {
-	      return _lodash2.default.isNull(this.curSocket) && this.curSocket.readyState > 1;
+	      return _lodash2.default.isNull(this.curSocket) || this.curSocket && this.curSocket.readyState > 1;
 	    }
 	  }]);
 
