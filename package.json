@@ -1,0 +1,47 @@
+{
+  "name": "sz-json-rpc",
+  "version": "1.0.0",
+  "description": "JSON-RPC that works on browser.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "npm run build && make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanYohansson/sz-json-rpc.git"
+  },
+  "keywords": [
+    "json-rpc",
+    "rpc",
+    "json",
+    "browser",
+    "es6"
+  ],
+  "author": "Stefan Yohansson <sy.fen0@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StefanYohansson/sz-json-rpc/issues"
+  },
+  "homepage": "https://github.com/StefanYohansson/sz-json-rpc#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mock-socket": "^6.0.4",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "promise-polyfill": "^6.0.2",
+    "whatwg-fetch": "^2.0.1",
+    "wolfy87-eventemitter": "^5.1.0"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="/dist/sz-json-rpc.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var webSocket = new WebSocket('ws://localhost:5000');
+        var ws = new SzJsonRpc().ws(webSocket);
+        ws.on('open', () => {
+          ws.request('ping')((err, response) => {
+            if (err) throw err;
+
+            console.log('response', response);
+          });
+        });
+
+        ws.on('close', (reason) => {
+          // this will not show when onbeforeunload event call .close
+          console.log('close', reason);
+        });
+
+        window.onbeforeunload = function() {
+          ws.close();
+        }
+      });
+    </script>
+  </body>
+</html>

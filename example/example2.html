@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="/dist/sz-json-rpc.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        const conn = new SzJsonRpc().wsConnection(WebSocket, 'ws://localhost:5000', {
+          onWSConnect: (ws) => {
+            ws.send('login', {}, (err, response) => {
+              if(err)
+                console.error(err);
+            });
+            ws.send('ping', null, (err, response) => {
+              console.log(response);
+            });
+          }
+        });
+        window.onbeforeunload = function() {
+          if (conn.socketReady())
+            conn.curSocket.close();
+        }
+      });
+    </script>
+  </body>
+</html>
