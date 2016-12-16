@@ -2,7 +2,7 @@
   "name": "sz-json-rpc",
   "version": "1.3.0",
   "description": "JSON-RPC that works on browser.",
-  "main": "./lib/sz-json-rpc.js",
+  "main": "index",
   "scripts": {
     "build": "webpack",
     "test": "npm run build && make test"
