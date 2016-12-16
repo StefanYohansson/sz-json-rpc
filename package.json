@@ -1,6 +1,6 @@
 {
   "name": "sz-json-rpc",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "JSON-RPC that works on browser.",
   "main": "index",
   "scripts": {
