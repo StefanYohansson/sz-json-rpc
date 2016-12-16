@@ -10,6 +10,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         const conn = new SzJsonRpc().wsConnection(WebSocket, 'ws://localhost:5000');
+        conn.getSocket();
         const ws = conn.curSocket;
         ws.on('open', () => {
           ws.send('login', {}, (err, response) => {
